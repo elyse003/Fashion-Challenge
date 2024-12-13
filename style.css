@@ -1,0 +1,662 @@
+/* removing the default padding and margin for the page when browser loaded  */
+*,::after, ::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* defining the variable to be used whhere its color , borders..  */
+:root{
+    --primary-color:#000000;
+    --secondary-color:#ffff;
+    --terrtiary-color:#ccc;
+    --footer-color:#616161;
+    --subscribe-color:#e1071c;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* starting with the body */
+body{
+    width: 100%;
+    font-family: var(--font-family);
+    background:var(--terrtiary-color);
+}
+/* header styling  */
+header{
+    width:100%;
+    background: var(--primary-color);
+}
+nav{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#social-icons{
+    display: flex;
+}
+#social-icons .icons ,#search-icon {
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#social-icons .icons:hover ,#search-icon:hover{
+    background:var(--terrtiary-color)
+} 
+.icons:hover svg,#search-icon:hover svg{
+    fill:var(--primary-color);
+}
+
+header  svg{
+    fill:var(--secondary-color);   
+}
+/* main section styling  */
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* hero section */
+#hero-section{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+#hero-section .intro-container{
+    padding:60px;
+    text-align: center;
+    background: var(--secondary-color);
+}
+.intro-container h1{
+    color:var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.intro-container p{
+    font-weight:bold;
+}
+.intro-container p span{
+    background: var(--primary-color);
+    color:var(--secondary-color);
+    padding:5px 5px 2px 5px;
+}
+#hero-section img{
+    max-width:100%;
+    height:auto;
+}
+#personal-pic{
+    height:100vh;
+    background-image: url('./assets/jane.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:20px;
+    display: flex;
+    justify-content:flex-start;
+    align-items:end;
+}
+#personal-pic .personal-name{
+    width:50% !important;
+    margin-bottom:5rem;   
+}
+.personal-name h3{
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 1.5rem; 
+    margin-bottom: 10px; 
+    color:var(--secondary-color) 
+}
+.personal-name h3 span{
+    text-transform: uppercase;
+    font-weight:bold;
+    font-size: 3rem;
+}
+.personal-name button{
+    width:30%;
+    padding:15px;
+    border: 1px solid transparent;
+    font-size:18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: #cccccc97;
+    cursor: pointer;
+}
+.personal-name button:hover{
+    background: #e1dcdcb7;
+}
+/*  recent-post section*/
+
+#recent-posts{
+    width: 100%;
+    display: flex;
+    border:1px solid var(--footer-color);
+    border-top: unset;
+}
+#recent-posts #post-holder{
+    flex:2;
+    width:60%;
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    align-items: center;
+    margin-left:20px;
+}
+#post-holder .post-cards{
+    background: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    padding:20px;
+    text-align: center;
+
+}
+hr{
+    background:#e3e2e2 ;
+}
+.post-cards:first-child #author{
+    width:100%;
+    display: flex;
+    gap:20px;
+    margin-bottom:10px;
+}
+#author .author-img{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+#author .author-name{
+    text-align: left;
+    padding-top:10px;
+
+}
+.author-name span{
+    color:var(--footer-color);
+    font-size: 14px;
+    
+}
+
+.post-cards h2{
+    margin-bottom:15px;
+    font-size: 20px;
+}
+.post-cards h4{
+    font-size: 16px;
+}
+.post-cards h4 span{
+    color:var(--footer-color)
+
+}
+.post-cards #text-container{
+    text-align: left;
+}
+.post-cards #buttons-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#buttons-container .like{
+    border:1px solid var(--footer-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+    background: transparent;
+    padding:10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#buttons-container .like:hover{
+    background: var(--terrtiary-color);
+    border:1px solid transparent;
+}
+#buttons-container .reply{
+    width:fit-content;
+    border:1px solid var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    background: var(--primary-color);
+    color:var(--secondary-color);
+    padding:10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#buttons-container .reply .number-holder{
+    background: var(--secondary-color);
+    color:var(--primary-color);
+    padding:5px 10px;
+    font-weight: lighter;
+}
+#buttons-container .reply:hover{
+    background: #d9d9d9;
+    color:var(--primary-color);
+    border:1px solid transparent;
+}
+/* footer part */
+footer{
+    width:100%;
+    background: var(--footer-color);
+    display: flex;
+    flex-direction: column;
+    padding:40px;
+    gap:20px;
+}
+footer #scroll-up{
+    border:1px solid black;
+    background: var(--primary-color);
+    color:var(--secondary-color);
+    width:fit-content;
+    padding:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#scroll-up svg{
+    fill:var(--secondary-color);
+    font-weight: bold;
+}
+#scroll-up:hover{
+    background: var(--terrtiary-color);
+    border:1px solid transparent;
+}
+#scroll-up:hover span{
+    color:var(--primary-color);
+}
+#scroll-up:hover svg{
+    fill:var(--primary-color);
+}
+.footer-link,a{
+    color:var(--secondary-color);
+}
+/* aside part styling */
+aside{
+    width:40%;
+    flex:1;
+    padding:20px;
+}
+.related-content-holder{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+}
+aside .aside-cards{
+    width:90%;
+}
+#avatar .avatar-img{
+    width:100%;
+    padding:0;
+}
+.avatar-img img{
+    width:100%;
+    height:fit-content;
+}
+#avatar .user-info{
+    margin-top:-5px;
+    padding: 20px;
+    color:var(--secondary-color);
+    background: var(--primary-color);
+}
+.user-info h3{
+    margin-bottom: 20px;
+}
+#advertise-title{
+    width:100%;
+    padding:15px;
+    background: var(--primary-color);
+    color:var(--secondary-color);
+}
+#blogger-block #bloggers-container{
+    display:flex;
+    flex-direction: column;
+}
+#bloggers-container h4{
+    font-weight:normal;
+}
+#bloggers-container .blogger{
+    border-bottom:1px solid #e3e2e2;
+    padding:15px;
+    display: flex;
+    gap: 15px;
+    width:100%;
+}
+#bloggers-container .blogger:hover{
+    background: #e3e2e2;
+    border:1px solid transparent;
+}
+.blogger-img{
+    width:10%;
+}
+.blogger-img img{
+    max-width: 100%;
+    height:auto;
+}
+#advertisment #categories-container{
+    padding:15px;
+}
+#categories-container .category{
+    background: var(--terrtiary-color);
+    padding:100px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+#blogger-block #bloggers-container,#advertisment #categories-container,#tags .tag-block{
+    width:100%;
+    background: var(--secondary-color);
+}
+#tags .tag-block{
+    padding:10px;
+}
+#tags-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    gap:15px 2px;
+}
+#tags-container div{
+    width:fit-content;
+    background: #efefef;
+    padding:2px 5px;
+    cursor:text;
+}
+#tags-container div:first-child{
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+#social-container,#subscribe-form{
+    background: var(--secondary-color);
+    padding:15px;
+    width:100%;
+}
+#subscribe-form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+}
+label , input , button[type="button"]{
+    width:90%;
+}
+input{
+    padding:10px;
+    outline: none;   
+}
+button[type="button"]{
+    background: var(--subscribe-color);
+    font-size:18px;
+    text-align: center;
+    padding:10px 20px;
+    color:var(--secondary-color);
+    border:1px solid transparent;
+    cursor: pointer;
+}
+button[type="button"]:hover{
+    color:var(--primary-color);
+    background-color: var(--terrtiary-color);
+}
+#gallery{
+    width:100%;
+    padding:10px 0;
+    background: var(--secondary-color);
+}
+#gallery .image-holder{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:10px;   
+}
+#gallery img{
+    width:50%;
+    height: auto;
+}
+/* responsive designs for different screen size  */
+/* smaller devices like mobile phones  */
+@media screen and (max-width: 480px){
+    #hero-section .intro-container{
+        padding:60px 10px;
+    }
+    #personal-pic{
+        background-size:contain;
+        height:auto;
+    }
+    #personal-pic .personal-name{
+        margin-bottom:8rem;
+        margin-top: 3rem;
+        width:90% !important;
+        line-height: 35px;
+
+    }
+    .personal-name h3{
+        font-size: 0.8rem;
+    }
+    .personal-name h3 span{
+        font-size: 1.4rem;
+    }
+    #personal-pic button{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width:45%;
+    }   
+    #post-holder .post-cards{
+        width:100%;
+    }
+    .post-cards:first-child #author{
+        flex-direction: column;
+        gap:10px;
+    }
+    #recent-posts {
+        flex-direction: column;
+        align-items:start;
+    }
+    #recent-posts #post-holder {
+        width:95%;
+        padding:0;
+        margin:15px 0 0 8px;
+    }
+    
+    aside {
+        width: 80%;
+        padding:0;
+        margin: 20px auto;
+    }
+    aside .related-content-holder{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:flex-start;
+        gap:30px;
+    }
+    aside .aside-cards{
+        width:100%;
+    }
+    #categories-container .category{
+        padding:50px;
+    }
+    #tags-container {
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; 
+        row-gap: 10px;
+    }
+    
+    #gallery img {
+        width: 45%;
+    }
+    input{
+        margin-bottom: 10px !important;
+    }
+    label{
+        width:100%;
+    }
+    
+}
+/* Extra Small Devices (Phones, 767px and below) */
+ @media (min-width: 481px) and (max-width: 767px) {
+    #personal-pic .personal-name{
+        margin-bottom:13.8rem;
+        width:80% !important;
+        line-height: 35px;
+    }
+    #personal-pic button{
+        display: inline-block;
+        text-align: center;
+        width:40%;
+    }
+    
+    #post-holder .post-cards{
+        width:100%;
+    }
+    .post-cards:first-child #author{
+        flex-direction: column;
+        gap:10px;
+    }
+   
+
+    #recent-posts {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #recent-posts #post-holder {
+        width:95%;
+        padding:0;
+        margin:15px 0 0 10px;
+    }
+    
+    aside {
+        width: 80%;
+        padding:0;
+        margin: 20px auto;
+    }
+    aside .related-content-holder{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:flex-start;
+        gap:30px;
+    }
+    aside .aside-cards{
+        width:100%;
+    }
+    #tags-container {
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; 
+        row-gap: 10px;
+    }
+    
+    #gallery img {
+        width: 46%;
+    }
+    input{
+        margin-bottom: 10px !important;
+    }
+    label{
+        width:50%;
+    }
+
+}
+/* Medium Devices (Tablets, 768px - 1203px) */
+@media screen and (min-width: 768px) and (max-width: 1203px) {
+    #hero-section .intro-container {
+      padding: 40px;
+    }
+    #personal-pic .personal-name{
+        margin-bottom:13rem;
+        width:55% !important;
+    }
+    #personal-pic button{
+        display: inline-block;
+        text-align: center;
+        width:40%;
+    }
+  
+    #recent-posts {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #recent-posts #post-holder {
+      width: 90%;
+      padding: 0;
+      margin:20px 0 0 10px;
+    }
+  
+    aside {
+      width: 80%;
+      padding:0;
+      margin: 20px auto;
+    }
+    aside .related-content-holder{
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:flex-start;
+        gap:30px;
+    }
+    aside .aside-cards{
+        width:100%;
+    }
+    #tags-container {
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap; 
+        row-gap: 10px;
+    }
+  
+    #gallery img {
+      width: 48%;
+    }
+    input{
+        margin-bottom: 10px !important;
+    }
+    label{
+        width:50%;
+    }
+}
+  
+/* Large Devices (Desktops, 1024px and up) */
+ @media (min-width: 1024px){
+    main {
+      flex-direction: row;
+    }
+    #personal-pic button{
+        display: inline-block;
+        text-align: center;
+        width:40%;
+    }
+  
+    #recent-posts {
+      flex-direction: row;
+    }
+    #gallery img {
+      width: 45%;
+    }
+    input{
+        margin-top: 10px;
+    }
+}
+  
+
+
